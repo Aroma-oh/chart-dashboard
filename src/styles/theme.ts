@@ -13,12 +13,11 @@ const colors = {
   primary: '#00a0ff',
   secondary: '#ddd',
   hover: '#00a0ff50',
-} as const;
+};
 
 const theme = {
   fontSize,
   colors,
-} as const;
+};
 
-export type Theme = typeof theme;
-export default theme as Theme;
+export default theme;
