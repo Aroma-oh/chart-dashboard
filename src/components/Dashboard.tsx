@@ -1,18 +1,11 @@
 import styled from 'styled-components';
 import ChartDisplay from './ChartDisplay';
-import { useRecoilValue } from 'recoil';
-import { selectedDateState } from 'store/atom';
 
 const Dashboard = () => {
-  const selectedDate = useRecoilValue(selectedDateState);
-
   return (
     <Box>
       <div className="title-box">
         <h1>시계열 차트</h1>
-        <p>
-          {selectedDate} ~ {selectedDate}{' '}
-        </p>
       </div>
       <div className="panel">
         <ChartDisplay />
