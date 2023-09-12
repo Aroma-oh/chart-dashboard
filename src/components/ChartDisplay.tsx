@@ -20,15 +20,19 @@ import {
   Cell,
 } from 'recharts';
 import CustomTooltip from './CustomTooltip';
-import FilterComponent from './Filter';
+import Filter from './Filter';
+import { CategoricalChartFunc } from 'recharts/types/chart/generateCategoricalChart';
 
 const ChartDisplay = () => {
   const data = groupDataByDate(mockData.response);
-  const { selectedDate, selectedId } = useFilter(data);
+
+  const { date, id, dateFilter, idFilter, idSelector, selectedDate, selectedId } = useFilter(data);
+
+  const filterProps = { data, date, id, dateFilter, idFilter, selectedDate, selectedId };
 
   return (
     <Box>
-      <FilterComponent data={data} />
+      <Filter filterProps={filterProps} />
       <ResponsiveContainer width="100%" height="100%">
         <ComposedChart
           width={500}
@@ -40,6 +44,7 @@ const ChartDisplay = () => {
             bottom: 20,
             left: 20,
           }}
+          onClick={idSelector as CategoricalChartFunc}
         >
           <CartesianGrid stroke="#f5f5f5" />
           <XAxis dataKey="time" scale="band" className="XAxis" />
@@ -67,6 +72,7 @@ const ChartDisplay = () => {
             yAxisId="right"
             fill={theme.colors.areaFill}
             stroke={theme.colors.areaStroke}
+            isAnimationActive={false}
           />
         </ComposedChart>
       </ResponsiveContainer>
