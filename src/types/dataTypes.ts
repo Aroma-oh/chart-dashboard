@@ -16,3 +16,9 @@ export interface DataItem {
 export interface GroupedData {
   [date: string]: DataItem[];
 }
+
+export interface ActivePayload {
+  activePayload: {
+    payload: DataItem;
+  }[];
+}
