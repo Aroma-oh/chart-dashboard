@@ -26,7 +26,16 @@ export const useFilter = (data: GroupedData) => {
   };
 
   const idSelector = ({ activePayload }: ActivePayload) => {
-    setSelectedId(activePayload[0].payload.id);
+    const payloadId = activePayload[0].payload.id;
+
+    console.info('payloadId', payloadId);
+    console.info('selectedId', selectedId);
+
+    if (payloadId === selectedId) {
+      setSelectedId('all');
+    } else {
+      setSelectedId(payloadId);
+    }
   };
 
   return { date, id, dateFilter, idFilter, idSelector, selectedDate, selectedId };
