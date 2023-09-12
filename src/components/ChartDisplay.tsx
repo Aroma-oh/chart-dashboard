@@ -44,7 +44,7 @@ const ChartDisplay = () => {
           }}
           onClick={idSelector as CategoricalChartFunc}
         >
-          <CartesianGrid stroke="#f5f5f5" />
+          <CartesianGrid stroke={theme.colors.grid} />
           <XAxis dataKey="time" scale="band" className="XAxis" padding={{ left: 2, right: 2 }} />
           <Tooltip content={<CustomTooltip />} formatter={formatNumber} />
           <YAxis

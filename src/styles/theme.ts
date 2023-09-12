@@ -20,6 +20,7 @@ const colors = {
   barFill: '#fbd4cc89',
   barFillHighlight: '#ff947f',
   barStroke: '#fbd4cc',
+  grid: '#f5f5f5',
 };
 
 const theme = {
