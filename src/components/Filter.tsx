@@ -1,13 +1,18 @@
 import styled from 'styled-components';
-import { useFilter } from 'hooks/useFilter';
-import { GroupedData } from 'types/dataTypes';
 
 interface FilterProps {
-  data: GroupedData;
+  filterProps: {
+    date: string[];
+    id: string[];
+    dateFilter: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+    idFilter: (id: string) => void;
+    selectedDate: string;
+    selectedId: string;
+  };
 }
 
-const Filter = ({ data }: FilterProps) => {
-  const { date, id, dateFilter, filter, selectedDate, selectedId } = useFilter(data);
+const Filter = ({ filterProps }: FilterProps) => {
+  const { date, id, dateFilter, idFilter, selectedDate, selectedId } = filterProps;
 
   return (
     <Box>
@@ -25,7 +30,7 @@ const Filter = ({ data }: FilterProps) => {
         {id.map((item) => (
           <button
             key={item}
-            onClick={() => filter(item)}
+            onClick={() => idFilter(item)}
             className={selectedId === item ? 'selected' : ''}
           >
             {item}
