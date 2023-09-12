@@ -4,8 +4,8 @@ interface FilterProps {
   filterProps: {
     date: string[];
     id: string[];
-    dateFilter: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-    idFilter: (id: string) => void;
+    dateFilter: () => void;
+    idFilter: (item: string) => void;
     selectedDate: string;
     selectedId: string;
   };
