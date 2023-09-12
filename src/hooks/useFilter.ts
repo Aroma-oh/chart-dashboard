@@ -28,9 +28,6 @@ export const useFilter = (data: GroupedData) => {
   const idSelector = ({ activePayload }: ActivePayload) => {
     const payloadId = activePayload[0].payload.id;
 
-    console.info('payloadId', payloadId);
-    console.info('selectedId', selectedId);
-
     if (payloadId === selectedId) {
       setSelectedId('all');
     } else {
