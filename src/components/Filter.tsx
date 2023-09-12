@@ -5,6 +5,7 @@ interface FilterProps {
     date: string[];
     id: string[];
     dateFilter: () => void;
+    // eslint-disable-next-line no-unused-vars
     idFilter: (item: string) => void;
     selectedDate: string;
     selectedId: string;
