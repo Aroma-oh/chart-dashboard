@@ -1,4 +1,4 @@
-import { GroupedData, OriginalData } from 'types/dataType';
+import { GroupedData, OriginalData } from 'types/dataTypes';
 
 export const groupDataByDate = (originalData: OriginalData) => {
   const groupedData: GroupedData = {};

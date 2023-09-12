@@ -1,4 +1,4 @@
-import { GroupedData } from 'types/dataType';
+import { GroupedData } from 'types/dataTypes';
 import { selectedDateState, selectedIdState } from 'store/atom';
 import { useRecoilState } from 'recoil';
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useFilter } from 'hooks/useFilter';
-import { GroupedData } from 'types/dataType';
+import { GroupedData } from 'types/dataTypes';
 
 interface FilterProps {
   data: GroupedData;
