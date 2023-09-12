@@ -10,8 +10,12 @@ const CustomTooltip = ({ active, payload }: TooltipProps<ValueType, NameType>) =
     return (
       <Box>
         <p className="id">{`${id}`}</p>
-        <p>{`area : ${formatNumber(value_area)}`}</p>
-        <p>{`bar : ${formatNumber(value_bar)}`}</p>
+        <p>
+          area: <span className="area">{formatNumber(value_area)}</span>
+        </p>
+        <p>
+          bar: <span className="bar">{formatNumber(value_bar)}</span>
+        </p>
       </Box>
     );
   }
@@ -25,6 +29,7 @@ const Box = styled.div`
   border-radius: 4px;
   line-height: 140%;
   background-color: ${({ theme }) => theme.colors.bgBoard};
+  font-size: 11px;
 
   .id {
     background-color: ${({ theme }) => theme.colors.bgMain};
@@ -33,5 +38,13 @@ const Box = styled.div`
     margin-left: -6px;
     border-radius: 2px;
     width: fit-content;
+  }
+  .area {
+    color: ${({ theme }) => theme.colors.areaStroke};
+    font-weight: 800;
+  }
+  .bar {
+    color: ${({ theme }) => theme.colors.barStroke};
+    font-weight: 800;
   }
 `;
