@@ -4,9 +4,7 @@ import ChartDisplay from './ChartDisplay';
 const Dashboard = () => {
   return (
     <Box>
-      <div className="title-box">
-        <h1>시계열 차트</h1>
-      </div>
+      <h1>시계열 차트</h1>
       <div className="panel">
         <ChartDisplay />
       </div>
@@ -22,19 +20,11 @@ const Box = styled.main`
   flex-direction: column;
   align-items: center;
 
-  .title-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 16px;
-    gap: 12px;
-  }
   h1 {
     font-size: 32px;
     font-weight: 700;
+    padding: 18px 0;
   }
 
-  background-color: ${({ theme }) => theme.colors.bgMain};
   color: ${({ theme }) => theme.colors.fontPrimary};
 `;

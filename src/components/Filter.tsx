@@ -45,7 +45,7 @@ export default Filter;
 
 const Box = styled.div`
   width: 100%;
-  height: 70px;
+  height: 60px;
 
   display: flex;
   justify-content: center;
@@ -56,7 +56,7 @@ const DateFilter = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70px;
+  height: 60px;
   width: 15vw;
   min-width: 200px;
   margin: auto;

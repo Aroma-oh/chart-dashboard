@@ -35,11 +35,9 @@ const ChartDisplay = () => {
       <Filter filterProps={filterProps} />
       <ResponsiveContainer width="100%" height="100%">
         <ComposedChart
-          width={500}
-          height={400}
           data={data[selectedDate]}
           margin={{
-            top: 20,
+            top: 40,
             right: 20,
             bottom: 20,
             left: 20,
@@ -47,15 +45,23 @@ const ChartDisplay = () => {
           onClick={idSelector as CategoricalChartFunc}
         >
           <CartesianGrid stroke="#f5f5f5" />
-          <XAxis dataKey="time" scale="band" className="XAxis" />
+          <XAxis dataKey="time" scale="band" className="XAxis" padding={{ left: 2, right: 2 }} />
           <Tooltip content={<CustomTooltip />} formatter={formatNumber} />
-          <YAxis yAxisId="left" tickFormatter={formatNumber} />
-          <YAxis yAxisId="right" orientation="right" />
+          <YAxis
+            yAxisId="left"
+            tickFormatter={formatNumber}
+            label={{ value: 'Bar', position: 'top', offset: 18, fontSize: '16' }}
+          />
+          <YAxis
+            yAxisId="right"
+            orientation="right"
+            label={{ value: 'Area', position: 'top', offset: 18, fontSize: '16' }}
+          />
           <Legend
             align="center"
             payload={[
-              { value: 'value_area', type: 'square', color: theme.colors.areaStroke },
-              { value: 'value_bar', type: 'square', color: theme.colors.barStroke },
+              { value: 'Bar', type: 'square', color: theme.colors.barStroke },
+              { value: 'Area', type: 'square', color: theme.colors.areaStroke },
             ]}
           />
           <Bar dataKey="value_bar" yAxisId="left" barSize={20} stroke={theme.colors.barStroke}>
@@ -86,7 +92,7 @@ const Box = styled.section`
   background-color: ${({ theme }) => theme.colors.bgBoard};
   font-size: 10px;
 
-  height: 650px;
+  height: 680px;
   max-width: 95vw;
 
   display: flex;
