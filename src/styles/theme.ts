@@ -7,12 +7,19 @@ const fontSize = {
 };
 
 const colors = {
-  background: '#e3e1e3',
-  fontPrimary: 'black',
-  fontSecondary: 'gray',
-  primary: '#00a0ff',
-  secondary: '#ddd',
-  hover: '#00a0ff50',
+  bgMain: '#e3e1e399',
+  bgBoard: '#fefefe',
+  fontPrimary: '#202124',
+  fontSecondary: '#908790',
+  hover: '#ffdce0',
+  select: '#ffdce0',
+  primary: 'fdb800',
+  secondary: '#5babab',
+  areaFill: '#daeafd',
+  areaStroke: '#a8d2f6',
+  barFill: '#fbd4cc89',
+  barFillHighlight: '#ff947f',
+  barStroke: '#fbd4cc',
 };
 
 const theme = {
