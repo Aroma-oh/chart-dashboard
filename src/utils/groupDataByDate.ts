@@ -1,21 +1,4 @@
-interface OriginalData {
-  [timestamp: string]: {
-    id: string;
-    value_area: number;
-    value_bar: number;
-  };
-}
-
-interface DataItem {
-  time: string;
-  id: string;
-  value_area: number;
-  value_bar: number;
-}
-
-interface GroupedData {
-  [date: string]: DataItem[];
-}
+import { GroupedData, OriginalData } from 'types/dataType';
 
 export const groupDataByDate = (originalData: OriginalData) => {
   const groupedData: GroupedData = {};
