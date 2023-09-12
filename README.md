@@ -8,7 +8,7 @@
 #### 배포링크 및 데모영상
 * 배포 링크: https://chart-dashboard-mauve.vercel.app/
 * 데모 영상
-  ![chart](https://github.com/Aroma-oh/chart-dashboard/assets/115550622/7811b148-8bd1-4f22-9789-5de0903cecaa)
+ ![chart](https://github.com/Aroma-oh/chart-dashboard/assets/115550622/151d0aff-6dc2-4b15-bb32-5175869a23f4)
 
 #### 실행 방법
 ```
