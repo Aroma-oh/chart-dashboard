@@ -1,6 +1,12 @@
 import styled from 'styled-components';
+import theme from 'styles/theme';
+
 import mockData from 'mock_data.json';
+
 import { groupDataByDate } from 'utils/groupDataByDate';
+import { formatNumber } from 'utils/dataHelpers';
+import { useFilter } from 'hooks/useFilter';
+
 import {
   ComposedChart,
   Area,
@@ -13,22 +19,12 @@ import {
   ResponsiveContainer,
   Cell,
 } from 'recharts';
-import theme from 'styles/theme';
 import CustomTooltip from './CustomTooltip';
 import FilterComponent from './Filter';
-import { useFilter } from 'hooks/useFilter';
-import { useEffect } from 'react';
 
 const ChartDisplay = () => {
   const data = groupDataByDate(mockData.response);
   const { selectedDate, selectedId } = useFilter(data);
-
-  console.info(data);
-
-  const formatNumber = (item: number) => item.toLocaleString();
-  useEffect(() => {
-    console.info(selectedDate);
-  }, [selectedDate]);
 
   return (
     <Box>
