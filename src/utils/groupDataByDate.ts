@@ -1,18 +1,12 @@
 import { GroupedData, OriginalData } from 'types/dataTypes';
 
 export const groupDataByDate = (originalData: OriginalData) => {
-  const groupedData: GroupedData = {};
-
-  for (const timestamp in originalData) {
-    const entry = originalData[timestamp];
+  return Object.entries(originalData).reduce((groupedData: GroupedData, [timestamp, entry]) => {
     const [date, time] = timestamp.split(' ');
 
-    if (!groupedData[date]) {
-      groupedData[date] = [];
-    }
-
+    groupedData[date] = groupedData[date] || [];
     groupedData[date].push({ time, ...entry });
-  }
 
-  return groupedData;
+    return groupedData;
+  }, {});
 };
