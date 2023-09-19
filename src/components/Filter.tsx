@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface FilterProps {
-  filterProps: {
+  filter: {
     date: string[];
     id: string[];
     // eslint-disable-next-line no-unused-vars
@@ -13,8 +13,8 @@ interface FilterProps {
   };
 }
 
-const Filter = ({ filterProps }: FilterProps) => {
-  const { date, id, dateFilter, idFilter, selectedDate, selectedId } = filterProps;
+const Filter = ({ filter }: FilterProps) => {
+  const { date, id, dateFilter, idFilter, selectedDate, selectedId } = filter;
 
   return (
     <Box>

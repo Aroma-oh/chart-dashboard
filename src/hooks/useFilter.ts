@@ -35,5 +35,7 @@ export const useFilter = (data: GroupedData) => {
     }
   };
 
-  return { date, id, dateFilter, idFilter, idSelector, selectedDate, selectedId };
+  const filter = { date, id, dateFilter, idFilter, idSelector, selectedDate, selectedId };
+
+  return filter;
 };
