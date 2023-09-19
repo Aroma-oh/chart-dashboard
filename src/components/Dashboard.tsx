@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 import ChartDisplay from './ChartDisplay';
 
+import mockData from 'mock_data.json';
+import { groupDataByDate } from 'utils/groupDataByDate';
+
 const Dashboard = () => {
+  const data = groupDataByDate(mockData.response);
+
   return (
     <Box>
       <h1>시계열 차트</h1>
       <div className="panel">
-        <ChartDisplay />
+        <ChartDisplay data={data} />
       </div>
     </Box>
   );

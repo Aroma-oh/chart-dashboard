@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 import theme from 'styles/theme';
 
-import mockData from 'mock_data.json';
-
-import { groupDataByDate } from 'utils/groupDataByDate';
 import { formatNumber } from 'utils/dataHelpers';
 import { useFilter } from 'hooks/useFilter';
 
@@ -22,17 +19,16 @@ import {
 import CustomTooltip from './CustomTooltip';
 import Filter from './Filter';
 import { CategoricalChartFunc } from 'recharts/types/chart/generateCategoricalChart';
+import { GroupedData } from 'types/dataTypes';
 
-const ChartDisplay = () => {
-  const data = groupDataByDate(mockData.response);
-
+const ChartDisplay = ({ data }: { data: GroupedData }) => {
   const { date, id, dateFilter, idFilter, idSelector, selectedDate, selectedId } = useFilter(data);
 
-  const filterProps = { data, date, id, dateFilter, idFilter, selectedDate, selectedId };
+  const filterProps = { date, id, dateFilter, idFilter, selectedDate, selectedId };
 
   return (
     <Box>
-      <Filter filterProps={filterProps} />
+      <Filter filter={filterProps} />
       <ResponsiveContainer width="100%" height="100%">
         <ComposedChart
           data={data[selectedDate]}
