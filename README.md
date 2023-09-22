@@ -6,7 +6,7 @@
 * 기간: 2023.09.10 ~ 2023.09.12
 
 #### 기술 스택
-* React, TypeScript, Styled-component
+* React, TypeScript, Styled-component, Recharts
 
 #### 배포링크 및 데모영상
 * 배포 링크: https://chart-dashboard-mauve.vercel.app/
